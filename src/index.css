@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased font-sans;
+  }
+
+  h1 {
+    @apply text-3xl font-bold mb-4;
+  }
+
+  h2 {
+    @apply text-2xl font-bold mb-3;
+  }
+
+  h3 {
+    @apply text-xl font-bold mb-2;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-slate-800 rounded-xl shadow-md overflow-hidden transition-all hover:shadow-lg;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800;
+  }
+
+  .btn-secondary {
+    @apply bg-slate-200 text-slate-800 hover:bg-slate-300 active:bg-slate-400 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600;
+  }
+
+  .btn-success {
+    @apply bg-emerald-600 text-white hover:bg-emerald-700 active:bg-emerald-800;
+  }
+
+  .btn-danger {
+    @apply bg-rose-600 text-white hover:bg-rose-700 active:bg-rose-800;
+  }
+
+  .input {
+    @apply px-4 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-slate-800 dark:border-slate-700;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300;
+  }
+
+  .badge-success {
+    @apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300;
+  }
+
+  .badge-warning {
+    @apply bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-300;
+  }
+
+  .badge-danger {
+    @apply bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-300;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .form-group {
+    @apply mb-4;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1;
+  }
+
+  /* Quiz related styles */
+  .quiz-option {
+    @apply relative block w-full p-4 mb-3 border rounded-lg transition-all cursor-pointer
+      border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500;
+  }
+
+  .quiz-option.selected {
+    @apply border-blue-500 dark:border-blue-500 bg-blue-50 dark:bg-blue-900/30;
+  }
+
+  .quiz-option.correct {
+    @apply border-emerald-500 dark:border-emerald-500 bg-emerald-50 dark:bg-emerald-900/30;
+  }
+
+  .quiz-option.incorrect {
+    @apply border-rose-500 dark:border-rose-500 bg-rose-50 dark:bg-rose-900/30;
+  }
+
+  /* Animation classes */
+  .pulse {
+    @apply animate-pulse;
+  }
+
+  .fade-in {
+    @apply animate-fadeIn;
+  }
+
+  /* XP progress bar */
+  .xp-progress {
+    @apply h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden;
+  }
+
+  .xp-progress-bar {
+    @apply h-full bg-gradient-to-r from-blue-500 to-indigo-600 transition-all duration-300;
+  }
+
+  /* Markdown styles */
+  .prose {
+    @apply text-slate-700 dark:text-slate-300;
+  }
+
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    @apply text-slate-900 dark:text-white font-bold mb-4;
+  }
+
+  .prose p {
+    @apply mb-4;
+  }
+
+  .prose ul {
+    @apply list-disc list-inside mb-4;
+  }
+
+  .prose ol {
+    @apply list-decimal list-inside mb-4;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+
+  .prose code {
+    @apply bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded;
+  }
+
+  .prose pre {
+    @apply bg-slate-100 dark:bg-slate-800 p-4 rounded-lg mb-4 overflow-x-auto;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-slate-300 dark:border-slate-600 pl-4 italic;
+  }
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  .glassmorphism {
+    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md;
+  }
+}
